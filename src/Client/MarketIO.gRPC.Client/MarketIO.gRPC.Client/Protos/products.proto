@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option csharp_namespace = "MarketIO.gRPC.Client.Protos";
+
+package prodcts;
+
+service Products {
+  // Sends a greeting
+  rpc GetProducts (ProductRequest) returns (ProductsPacket);
+}
+message ProductRequest{
+}
+message ProductResponse{
+   int32 id = 1;
+   string name =2;
+   string image = 3;
+}
+
+message ProductsPacket{
+	repeated ProductResponse Products =  1;
+}
